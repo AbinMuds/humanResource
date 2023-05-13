@@ -1,8 +1,8 @@
-package com.example.humanresorce.Employee.service;
+package com.example.humanresorce.service;
 
 
-import com.example.humanresorce.Employee.domain.Employee;
-import com.example.humanresorce.Employee.repository.EmployeeRepository;
+import com.example.humanresorce.domain.Employee;
+import com.example.humanresorce.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

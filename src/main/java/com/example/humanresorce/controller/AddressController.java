@@ -1,7 +1,7 @@
-package com.example.humanresorce.Employee.controller;
+package com.example.humanresorce.controller;
 
-import com.example.humanresorce.Employee.domain.Address;
-import com.example.humanresorce.Employee.service.AddressService;
+import com.example.humanresorce.domain.Address;
+import com.example.humanresorce.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

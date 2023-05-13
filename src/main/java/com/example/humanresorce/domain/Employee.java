@@ -1,4 +1,4 @@
-package com.example.humanresorce.Employee.domain;
+package com.example.humanresorce.domain;
 import jakarta.persistence.*;
 import lombok.*;
 

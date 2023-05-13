@@ -1,7 +1,7 @@
-package com.example.humanresorce.Employee.service;
+package com.example.humanresorce.service;
 
-import com.example.humanresorce.Employee.domain.Address;
-import com.example.humanresorce.Employee.repository.AddressRepository;
+import com.example.humanresorce.domain.Address;
+import com.example.humanresorce.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
