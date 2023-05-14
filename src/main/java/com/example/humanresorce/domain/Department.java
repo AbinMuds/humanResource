@@ -1,10 +1,15 @@
 package com.example.humanresorce.domain;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.*;
+import lombok.*;
 
+@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@Entity
+@Table(name="department")
 public class Department {
 
     @Id
