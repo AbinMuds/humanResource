@@ -17,8 +17,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "employee_sequence")
 
     private long id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     @Temporal(TemporalType.DATE)
     private Date dob;
     @Temporal(TemporalType.DATE)

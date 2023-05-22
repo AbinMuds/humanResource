@@ -25,12 +25,9 @@ public class AccountController {
         return accountService.addAccount(account);
     }
 
-    @PutMapping
-    public ResponseEntity updateAccount(@RequestBody Account account, @RequestParam("id") Long id){
-        if(id!= account.getId()){
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity(accountService.updateAccount(account), HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity updateAccount(@RequestBody Account account, @PathVariable Long id){
+        return new ResponseEntity(accountService.updateAccount(account, id), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
