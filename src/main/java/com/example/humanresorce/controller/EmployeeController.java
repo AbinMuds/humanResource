@@ -32,10 +32,15 @@ public class EmployeeController {
         return employeeService.insertEmployee(employee);
     }
 
+    @DeleteMapping
+    public void deleteALlEmployees(){
+        employeeService.deleteAllEmployee();
+    }
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable Long id){
         employeeService.deleteEmployeeById(id);
     }
+
 
     @PutMapping
     public ResponseEntity<Employee> updateEmployee(@RequestParam("id") Long id,@RequestBody Employee employee){

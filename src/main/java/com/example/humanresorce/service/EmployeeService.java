@@ -35,4 +35,8 @@ public class EmployeeService {
     public void createMultipleEmployee(List<Employee> employeeList) {
         employeeRepository.saveAll(employeeList);
     }
+
+    public void deleteAllEmployee() {
+        employeeRepository.deleteAll();
+    }
 }
