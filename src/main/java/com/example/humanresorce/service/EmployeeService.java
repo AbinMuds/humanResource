@@ -39,4 +39,8 @@ public class EmployeeService {
     public void deleteAllEmployee() {
         employeeRepository.deleteAll();
     }
+
+    public Employee save(Employee data) {
+        return employeeRepository.save(data);
+    }
 }

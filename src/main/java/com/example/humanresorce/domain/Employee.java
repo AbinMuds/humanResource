@@ -23,5 +23,4 @@ public class Employee {
     private Date dob;
     @Temporal(TemporalType.DATE)
     private Date hireDate;
-
 }

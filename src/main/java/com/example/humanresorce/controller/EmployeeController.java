@@ -41,13 +41,19 @@ public class EmployeeController {
         employeeService.deleteEmployeeById(id);
     }
 
-
-    @PutMapping
-    public ResponseEntity<Employee> updateEmployee(@RequestParam("id") Long id,@RequestBody Employee employee){
-        if (id!=employee.getId()){
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    @PutMapping("/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,@RequestBody Employee employee){
+        Optional<Employee> employeeData = employeeService.showEmployeeById(id);
+        if (employeeData.isPresent()){
+            Employee data = employeeData.get();
+            data.setFirstName(employee.getFirstName());
+            data.setLastName(employee.getLastName());
+            data.setDob(employee.getDob());
+            data.setHireDate(employee.getHireDate());
+            return new ResponseEntity<>(employeeService.save(data),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity(employeeService.updateEmployee(employee),HttpStatus.OK);
     }
 
     @PostMapping("/multiple")
