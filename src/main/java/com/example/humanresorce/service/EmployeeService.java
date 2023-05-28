@@ -40,7 +40,8 @@ public class EmployeeService {
         employeeRepository.deleteAll();
     }
 
-    public Employee save(Employee data) {
+    public Employee saveData(Employee data) {
+        System.out.println(data);
         return employeeRepository.save(data);
     }
 }

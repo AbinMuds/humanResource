@@ -45,12 +45,11 @@ public class EmployeeController {
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,@RequestBody Employee employee){
         Optional<Employee> employeeData = employeeService.showEmployeeById(id);
         if (employeeData.isPresent()){
-            Employee data = employeeData.get();
-            data.setFirstName(employee.getFirstName());
-            data.setLastName(employee.getLastName());
-            data.setDob(employee.getDob());
-            data.setHireDate(employee.getHireDate());
-            return new ResponseEntity<>(employeeService.save(data),HttpStatus.OK);
+//            data.setFirstName(employee.getFirstName());
+//            data.setLastName(employee.getLastName()
+//            data.setDob(employee.getDob());
+//            data.setHireDate(employee.getHireDate());
+            return new ResponseEntity<>(employeeService.saveData(employee),HttpStatus.OK);
         }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
