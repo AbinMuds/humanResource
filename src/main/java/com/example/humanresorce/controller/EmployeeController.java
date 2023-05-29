@@ -1,8 +1,10 @@
 package com.example.humanresorce.controller;
 
+import com.example.humanresorce.repository.EmployeeRepository;
 import com.example.humanresorce.service.EmployeeService;
 import com.example.humanresorce.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,14 @@ import java.util.Optional;
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @GetMapping("/showByName/{name}")
+    public List<Employee> showEmployeeByName(@PathVariable("name") String name) {
+        return employeeRepository.findByLastNameOrFirstName(name);
+    }
+
     @GetMapping
     public List<Employee> showEmployee(){
         return employeeService.showAll();
